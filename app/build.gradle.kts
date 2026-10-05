@@ -25,11 +25,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         compose = true
@@ -48,10 +48,11 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling-preview)
     implementation(libs.androidx.material3)
-	implementation("androidx.compose.material:material-icons-extended")	
-    // 汉字拼音转换
+    // 扩展图标库（已修复别名报错）
+    implementation("androidx.compose.material:material-icons-extended:1.6.5")
+    // 拼音处理库
     implementation("com.github.promeg:tinypinyin:2.0.3")
-    // Excel/CSV 解析
+    // Excel/CSV 解析库
     implementation("org.apache.poi:poi:5.2.3")
     implementation("org.apache.poi:poi-ooxml:5.2.3")
 }
